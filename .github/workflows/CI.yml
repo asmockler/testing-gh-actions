@@ -4,8 +4,6 @@ jobs:
   test:
     name: Test
     runs-on: macOS-latest
-    env:
-      - CI: true
     steps:
     - uses: actions/checkout@v1
     - name: Set Node.js 10.x
@@ -15,5 +13,7 @@ jobs:
     - name: yarn install
       run: yarn install
     - name: Test
+      env:
+      - CI: true
       run: yarn test
 
